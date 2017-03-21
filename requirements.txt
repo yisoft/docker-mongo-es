@@ -1,6 +1,6 @@
-mongo-connector==2.3.0
+mongo-connector==2.5.1
 elastic-doc-manager
-elasticsearch>=1.0.0,<2.0.0
-pymongo==3.2.2
-requests
-PyYAML==3.11
+elasticsearch>=5.0.0,<6.0.0
+pymongo==3.4.0
+requests==2.13.0
+PyYAML==3.12
