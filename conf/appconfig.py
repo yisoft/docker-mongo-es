@@ -25,7 +25,6 @@ DEFAULTS = {
     'es': {
         'url': ES_URL,
         'indexes': ES_INDEXES
-
     },
     'mongo-connector': {
         'mainAddress': MONGO_URL,
@@ -54,7 +53,6 @@ DEFAULTS = {
         'verbosity': LOG_VERBOSITY,
         'continueOnError': True
     },
-
 }
 
 CONFIG_LOCATION = os.getenv('CONFIG_LOCATION')

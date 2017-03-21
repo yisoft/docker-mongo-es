@@ -1,7 +1,7 @@
-FROM python:3.5.1-alpine
+FROM python:3.5.3-alpine
 
-ENV ETCDCTL_VERSION v2.2.5
-ENV DUMB_INIT_VERSION 1.0.1
+ENV ETCDCTL_VERSION v3.1.3
+ENV DUMB_INIT_VERSION 1.2.0
 ENV CONFD_VERSION 0.12.0-alpha3
 
 # Native dependencies
