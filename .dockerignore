@@ -1,8 +1,13 @@
-.idea
-*.iml
+.idea/
+.git/
+.vs/
+
 *.md
 LICENSE
 *.git*
+
+Dockerfile
+*requirements.txt
 oplog.timestamp
 mongo-connector.json
 docker-compose.yml
