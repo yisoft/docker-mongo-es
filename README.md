@@ -14,7 +14,7 @@ Docker based wrapper for [mongo connector](https://github.com/10gen-labs/mongo-c
 ```
 docker run --rm -it -e MONGO_URL=172.17.42.1:27017 \
                     -e ES_URL=172.17.42.1:9200 \ 
-                    totem/docker-mongo-es
+                    yisoft/mongo-es
 ```
  
 ## Environment Variables
