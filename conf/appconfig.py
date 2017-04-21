@@ -38,7 +38,7 @@ DEFAULTS = {
         'timezoneAware': True,
         'docManagers': [
             {
-                'docManager': 'elastic_doc_manager',
+                'docManager': 'elastic2_doc_manager',
                 'targetURL': ES_URL,
                 "args": {
                     "clientOptions": {

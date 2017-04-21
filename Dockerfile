@@ -1,8 +1,9 @@
-FROM python:3.5.3-alpine
+FROM python:3.6.1-alpine
 
-ENV ETCDCTL_VERSION v3.1.3
+# env
+ENV ETCDCTL_VERSION v3.1.6
 ENV DUMB_INIT_VERSION 1.2.0
-ENV CONFD_VERSION 0.12.0-alpha3
+ENV MONGO_CONNECTOR_VERSION 'mongo-connector[elastic5]'
 
 # Native dependencies
 RUN \
@@ -23,20 +24,13 @@ RUN \
     && apk del build-dependencies \
     && rm -rf ~/.cache /tmp/*
 
+
 # Application dependencies
-ADD requirements.txt /opt/mongo-connector/requirements.txt
-RUN \
-    # Python dependencies
-    pip3 install --ignore-installed  --no-cache-dir \
-      -r /opt/mongo-connector/requirements.txt \
+RUN pip3 install pyyaml
+RUN pip3 install requests
+RUN pip3 install $MONGO_CONNECTOR_VERSION
 
-    # Cleanup
-    && find /usr/local \
-        \( -type d -a -name test -o -name tests \) -exec echo rm -rf '{}' + \
-        -o \( -type f -a -name '*.pyc' -o -name '*.pyo' \) -exec echo rm -f '{}' + \
-    && rm -rf /usr/src/python ~/.cache /tmp/*
-
-
+# add files
 ADD . /opt/mongo-connector/
 RUN chmod +x /opt/mongo-connector/run.sh
 
